@@ -1,25 +1,27 @@
 #include <stdio.h>
 /**
- * main - Prints all possible different combinations of two digits
+ * main - Prints all possible different combinations of three digits
+ *Numbers must be seperated by ,, followed by a space
  *
  * Return: Always 0
  */
 int main(void)
 {
-int first_digit;
-int second_digit;
-for (first_digit = 0; first_digit < 9; first_digit++)
+int first;
+int second;
+init third;
+for (first = 0; first < 8; first++)
 {
-for (second_digit = 0; second_digit < 10; second_digit++)
+for (second = first + 1; second < 9; second++)
 {
-if (first_digit != second_digit && first_digit < second_digit)
+for (third = second + 1; third < 10; third++)
 {
-putchar((first_digit % 10) + '0');
-putchar((second_digit % 10) + '0');
+putchar ((first % 10) + '0');
+putchar ((second % 10) + '0');
+putchar ((third % 10) + '0');
 {
-if (first_digit == 8)
+if (first == 7 && second == 8 && third == 9)
 continue;
-}
 putchar (',');
 putchar (' ');
 }
