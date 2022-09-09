@@ -1,27 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 /**
- * main - Entry point
+ * main - Prints all possible different combinations of two digits
  *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
 int main(void)
 {
-int d;
-for (d = 0; d < 90; d++)
+int first_digit;
+int second_digit;
+for (first_digit = 0; first_digit < 9; first_digit++)
 {
-for ()
+for (second_digit = 0; second_digit < 10; second_digit++)
 {
-putchar((d / 10) + '0');
-putchar((d % 10) + '0');
-}
-if (d != 89)
+if (first_digit != second_digit && first_digit < second_digit)
 {
-putchar(',');
-putchar(' ');
+putchar((first_digit % 10) + '0');
+putchar((second_digit % 10) + '0');
+{
+if (first_digit == 8)
+continue;
+}
+putchar (',');
+putchar (' ');
 }
 }
-putchar('\n');
+}
+putchar ('\n');
 return (0);
 }
