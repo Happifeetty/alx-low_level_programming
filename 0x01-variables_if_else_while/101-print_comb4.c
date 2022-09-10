@@ -22,7 +22,7 @@ putchar ((third % 10) + '0');
 if (first == 7 && second == 8 && third == 9)
 continue;
 putchar (',');
-putchar (' ')
+putchar (' ');
 }
 }
 }
