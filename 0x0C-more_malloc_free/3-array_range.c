@@ -2,36 +2,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * _memset -  initializes n bytes of memory to x
- * @ptr: initial adress
- * @x: variable to initialize with
- * @n: number of bytes to initialize
+ * array_range -  creates an array of integers
+ * The array created should contain all the values
+ * from min (included) to max (included), ordered from min to max
+ * @min: minimal value
+ * @max: maximum value
  *
- * Return: Return pointer char (so movements are 1 byte)
+ * Return: Pointer to allocated memory of s1 + nbytes of s2
  */
-char *_memset(char *ptr, int x, unsigned int n)
+int *array_range(int min, int max)
 {
-unsigned int i;
-for (i = 0; i < n; i++)
-ptr[i] = x;
-return (ptr);
-}
-/**
- * _calloc -  allocates memory using malloc and initializes in 0
- * @nmemb: number of elements of array to allocate
- * @size: size of elements
- *
- * Return: Pointer to allocated memory or normal process termination
- * with a status value of 98
- */
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-void *p;
-if (nmemb == 0 || size == 0)
+int *p;
+int size, i, j;
+if (min > max)
 return (0);
-p = malloc(nmemb * size);
+if (max > min)
+size = max - min + 1;
+else if (max == min)
+size = 2;
+p = malloc(sizeof(int) * size);
 if (p == 0)
 return (0);
-_memset(p, 0, size * nmemb);
+for (i = 0, j = min; j <= max; i++, j++)
+p[i] = j;
+if (max == min)
+p[i] = max;
 return (p);
 }
