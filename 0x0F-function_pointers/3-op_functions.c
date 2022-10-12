@@ -1,26 +1,60 @@
 #include "3-calc.h"
-#include <stddef.h>
-#include <stdio.h>
 /**
- * get_op_func - Calls function to perform arithmetic operation
- * between 2 numbers bases on an operator
- * @s: operator passed as argument to the program
+ * op_add - Adds two numbers
+ * @a: First Number
+ * @b: Second Number
  *
- * Return: Nothing
+ * Return: Sum of a and b
  */
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-op_t ops[] = {
-{"+", op_add},
-{"-", op_sub},
-{"*", op_mul},
-{"/", op_div},
-{"%", op_mod},
-{NULL, NULL}
-};
-int i;
-i = 0;
-while ((ops[i].op[0] != s[0]) && (i < 5))
-i++;
-return (ops[i].f);
+return (a + b);
+}
+
+/**
+ * op_sub - Substracts two numbers
+ * @a: First Number
+ * @b: Second Number
+ *
+ * Return: Substraction of a and b
+ */
+int op_sub(int a, int b)
+{
+return (a - b);
+}
+
+/**
+ * op_mul - Multiplies two numbers
+ * @a: First Number
+ * @b: Second Number
+ *
+ * Return: Multiplication of a and b
+ */
+int op_mul(int a, int b)
+{
+return (a * b);
+}
+
+/**
+ * op_div - Divides two numbers
+ * @a: First Number
+ * @b: Second Number
+ *
+ * Return: Division of a and b
+ */
+int op_div(int a, int b)
+{
+return (a / b);
+}
+
+/**
+ * op_mod - Modulus of two numbers
+ * @a: First Number
+ * @b: Second Number
+ *
+ * Return: Modulus of a and b
+ */
+int op_mod(int a, int b)
+{
+return (a % b);
 }
