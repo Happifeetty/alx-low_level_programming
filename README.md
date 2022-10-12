@@ -1,1 +1,1 @@
-Read me for 0x05-pointers_arrays_strings
+Readme for alx-low_level_programming
