@@ -53,7 +53,7 @@ char *tmp;
 list_t *new_node = malloc(sizeof(list_t));
 if (new_node == 0)
 return (0);
-if (str == 0
+if (str == 0)
 {
 new_node->str = 0;
 new_node->len = 0;
