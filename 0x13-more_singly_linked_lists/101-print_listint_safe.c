@@ -6,26 +6,19 @@
  * print_listint_safe - prints a singly linked list (can print lists with loop)
  * @head: head pointer of singly linked list
  *
- * Return: Number of elements in list
+ * Return: Number of nodes in list
  */
 size_t print_listint_safe(const listint_t *head)
 {
-const listint_t *tmp, *tmp2;
-unsigned int count = 0;
-tmp = head;
-if (tmp == 0)
-return (0);
-while (tmp != 0)
+size_t pichu = 0;
+const listint_t *aux_node = head;
+if (!head)
+exit(98);
+while (aux_node)
 {
-tmp2 = tmp;
-tmp = tmp->next;
-count++;
-printf("[%p] %d\n", (void *)tmp2, tmp2->n);
-if (tmp2 <= tmp)
-{
-printf("-> [%p] %d\n", (void *)tmp, tmp->n);
-break;
+printf("[%p] %i\n", (void *)aux_node, aux_node->n);
+aux_node = aux_node->next;
+pichu++;
 }
-}
-return (count);
+return (pichu);
 }
